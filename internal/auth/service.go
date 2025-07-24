@@ -4,6 +4,7 @@ import (
 	custom_error "go_fiber_core_project_api/pkg/utils/errors"
 
 	"github.com/jmoiron/sqlx"
+	"github.com/redis/go-redis/v9"
 )
 
 type AuthService interface {
@@ -16,8 +17,8 @@ type ServiceImpl struct {
 	repo    AuthRepo
 }
 
-func NewService(db_pool *sqlx.DB) AuthService {
-	repo := NewRepository(db_pool)
+func NewService(db_pool *sqlx.DB, redis *redis.Client) AuthService {
+	repo := NewRepository(db_pool, redis)
 	return &ServiceImpl{
 		db_pool: db_pool,
 		repo:    repo,

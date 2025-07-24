@@ -8,6 +8,7 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/jmoiron/sqlx"
+	"github.com/redis/go-redis/v9"
 )
 
 type AuthHandler struct {
@@ -15,10 +16,10 @@ type AuthHandler struct {
 	authService AuthService
 }
 
-func NewHandler(db_pool *sqlx.DB) *AuthHandler {
+func NewHandler(db_pool *sqlx.DB, redis *redis.Client) *AuthHandler {
 	return &AuthHandler{
 		db_pool:     db_pool,
-		authService: NewService(db_pool),
+		authService: NewService(db_pool, redis),
 	}
 }
 

@@ -3,6 +3,7 @@ package auth
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/jmoiron/sqlx"
+	"github.com/redis/go-redis/v9"
 )
 
 type AuthRoute struct {
@@ -11,8 +12,8 @@ type AuthRoute struct {
 	handler *AuthHandler
 }
 
-func NewRoute(app *fiber.App, db_pool *sqlx.DB) *AuthRoute {
-	handler := NewHandler(db_pool)
+func NewRoute(app *fiber.App, db_pool *sqlx.DB, redis *redis.Client) *AuthRoute {
+	handler := NewHandler(db_pool, redis)
 	return &AuthRoute{
 		app:     app,
 		db_pool: db_pool,

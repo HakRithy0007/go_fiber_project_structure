@@ -14,6 +14,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/jmoiron/sqlx"
 	"github.com/joho/godotenv"
+	"github.com/redis/go-redis/v9"
 )
 
 type AuthRepo interface {
@@ -24,7 +25,7 @@ type AuthRepoImpl struct {
 	db_pool *sqlx.DB
 }
 
-func NewRepository(db_pool *sqlx.DB) *AuthRepoImpl {
+func NewRepository(db_pool *sqlx.DB, redis *redis.Client) *AuthRepoImpl {
 	return &AuthRepoImpl{
 		db_pool: db_pool,
 	}
