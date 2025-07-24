@@ -30,20 +30,21 @@ func InitRedis() *RedisConfig {
 	if err != nil {
 		log.Printf("No .env file found, using system environment variables")
 	}
-	redis_host := os.Getenv("REDIS_HOST")
-	redis_port := os.Getenv("REDIS_PORT")
-	redis_password := os.Getenv("REDIS_PASSWORD")
-	redis_db := app.GetenvInt("REDIS_DB", 0)
-	redis_exprie := app.GetenvInt("REDIS_EXPIRE", 60)
+
+	redisHost := os.Getenv("REDIS_HOST")
+	redisPort := os.Getenv("REDIS_PORT")
+	redisPassword := os.Getenv("REDIS_PASSWORD")
+	redisDB := app.GetenvInt("REDIS_DB_NUMBER", 0)
+	redisExpire := app.GetenvInt("REDIS_EXPIRE", 60)
+
 	return &RedisConfig{
-		RedisHost:     redis_host,
-		RedisPort:     redis_port,
-		RedisPassword: redis_password,
-		RedisDB:       redis_db,
-		RedisExpire:   redis_exprie,
+		RedisHost:     redisHost,
+		RedisPort:     redisPort,
+		RedisPassword: redisPassword,
+		RedisDB:       redisDB,
+		RedisExpire:   redisExpire,
 	}
 }
-
 func NewRedisClient() *redis.Client {
 	redis_config := InitRedis()
 	once.Do(func() {

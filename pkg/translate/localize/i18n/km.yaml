@@ -1,0 +1,8 @@
+LoginFailed: "Failed Login Please Try again !"
+LoginSuccessfully: "Login Successfully"
+FailedRequestPayload: "Failed Request Payload"
+login_success: "Login Success"
+login_invalid : "Invalid request"
+user_not_found: "User not found"
+login_failed: "Login Failed"
+loginSessionMissing: "loginSessionMissing"

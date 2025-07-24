@@ -20,7 +20,7 @@ func New(db_pool *sqlx.DB) *fiber.App {
 		AllowMethods: "GET, HEAD, PUT, PATCH, POST, DELETE",
 	})).Use(
 		fiberi18n.New(&fiberi18n.Config{
-			RootPath: "pkg/translates/localize/i18n",
+			RootPath: "pkg/translate/localize/i18n",
 			AcceptLanguages: []language.Tag{
 				language.Chinese,
 				language.MustParse("km"),

@@ -21,8 +21,8 @@ func InitTranslate() *custom_error.ErrorResponse {
 	bundle.RegisterUnmarshalFunc("yaml", yaml.Unmarshal)
 
 	localeFiles := []string{
-		"pkg/translates/localize/i18n/en.yaml",
-		"pkg/translates/localize/i18n/km.yaml",
+		"pkg/translate/localize/i18n/en.yaml",
+		"pkg/translate/localize/i18n/km.yaml",
 	}
 
 	for _, file := range localeFiles {

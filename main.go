@@ -34,5 +34,9 @@ func main() {
 	handler.NewFrontService(app, db_pool, redis)
 
 	// START APPLICATION
-	app.Listen(fmt.Sprintf("%s:%d", app_configuration.AppHost, app_configuration.AppPort))
+	err := app.Listen(fmt.Sprintf("%s:%d", app_configuration.AppHost, app_configuration.AppPort))
+	if err != nil {
+		custom_logger.NewCustomLog("server_failed_to_start", err.Error(), "error")
+		panic(err)
+	}
 }
