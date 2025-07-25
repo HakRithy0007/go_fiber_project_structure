@@ -3,6 +3,7 @@ module go_fiber_core_project_api
 go 1.23.0
 
 require (
+	github.com/MicahParks/keyfunc/v2 v2.1.0 // indirect
 	github.com/andybalholm/brotli v1.2.0 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
@@ -13,8 +14,10 @@ require (
 	github.com/go-redis/redis v6.15.9+incompatible // indirect
 	github.com/gofiber/contrib/fiberi18n v1.0.0 // indirect
 	github.com/gofiber/contrib/fiberi18n/v2 v2.0.6 // indirect
+	github.com/gofiber/contrib/jwt v1.1.2 // indirect
 	github.com/gofiber/fiber/v2 v2.52.9 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
+	github.com/golang-jwt/jwt/v5 v5.2.3 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/jmoiron/sqlx v1.4.0 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
