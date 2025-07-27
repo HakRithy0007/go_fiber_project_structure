@@ -2,7 +2,6 @@ package constants
 
 const (
 
-	//*****Auth*****//
 	LoginFailed               = 100
 	LoginSuccessfully         = 200
 	LoginFailedRequestPayload = 300
